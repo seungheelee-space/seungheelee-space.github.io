@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#f8f7f1">
+  <meta name="description" content="이승희 전북대학교 주거환경학과 조교수. 주거환경과 웰빙, 회복환경, 지속가능한 공간디자인 연구와 논문, 수업을 소개합니다.">
+  <meta property="og:title" content="Seunghee Lee · Space, People & Wellbeing">
+  <meta property="og:description" content="Research, publications and teaching in housing environmental design. 이승희 · 전북대학교">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://seungheelee0902-pixel.github.io/">
+  <title>이승희 · Seunghee Lee | Space, People & Wellbeing</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;450;500;550;600;650;700&family=Manrope:wght@400;500;600;700&family=Noto+Sans+KR:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="publications.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main" data-i18n="skip">본문으로 이동</a>
+  <header class="site-header">
+    <div class="header-inner wrap">
+      <a class="wordmark" href="#home" aria-label="Seunghee Lee, home">
+        <svg class="brand-mark" viewBox="0 0 34 34" fill="none" aria-hidden="true"><path d="M4 28V5h25v23H15V15h14M4 28h11" stroke="currentColor" stroke-width="1.5"/><path d="M9 10h15M9 15v8" stroke="currentColor" stroke-width="1.5"/></svg>
+        <span>SEUNGHEE LEE<span class="wordmark-sub" data-i18n="brandSub">공간 · 사람 · 웰빙</span></span>
+      </a>
+      <nav class="desktop-nav" aria-label="Main navigation">
+        <a href="#research" data-i18n="navResearch">연구</a>
+        <a href="#publications" data-i18n="navPublications">논문</a>
+        <a href="#teaching" data-i18n="navTeaching">수업</a>
+        <a href="#about" data-i18n="navAbout">소개</a>
+        <a href="#contact" data-i18n="navContact">연락처</a>
+      </nav>
+      <div class="header-controls">
+        <div class="language-switch" role="group" aria-label="Language / 언어">
+          <button type="button" data-set-lang="ko" class="active" aria-pressed="true">KR</button><span aria-hidden="true">/</span><button type="button" data-set-lang="en" aria-pressed="false">EN</button>
+        </div>
+        <button class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="mobile-nav" aria-label="메뉴 열기"><span></span><span></span></button>
+      </div>
+    </div>
+    <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation" hidden>
+      <a href="#research" data-i18n="navResearch">연구</a><a href="#publications" data-i18n="navPublications">논문</a><a href="#teaching" data-i18n="navTeaching">수업</a><a href="#about" data-i18n="navAbout">소개</a><a href="#contact" data-i18n="navContact">연락처</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero wrap" id="home" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="tiny-square"></span> SPATIAL DESIGN & HUMAN EXPERIENCE</p>
+        <h1 id="hero-title">Between space<br>& <em>wellbeing.</em></h1>
+        <p class="hero-name"><strong data-i18n="heroName">이승희</strong><span class="name-divider"></span><span data-i18n="heroRole">전북대학교 주거환경학과 조교수</span></p>
+        <p class="hero-description" data-i18n="heroDescription">일상의 공간이 사람의 삶에 미치는 영향을 탐구합니다. 주거환경, 회복 경험, 지속가능성을 연결하는 공간디자인 연구와 교육을 이어갑니다.</p>
+        <div class="hero-actions">
+          <a class="button button-dark" href="#research"><span data-i18n="exploreResearch">연구 살펴보기</span><span aria-hidden="true">↘</span></a>
+          <a class="text-link" href="https://scholar.google.com/citations?user=pUCBr34AAAAJ&hl=en" target="_blank" rel="noopener noreferrer">Google Scholar <span aria-hidden="true">↗</span></a>
+        </div>
+        <div class="hero-affiliation"><span class="small-cross" aria-hidden="true">+</span><span>JEONBUK NATIONAL UNIVERSITY<br><span data-i18n="heroDepartment">Department of Housing Environmental Design</span></span></div>
+      </div>
+      <figure class="hero-visual">
+        <div class="visual-top"><span>SPATIAL RELATIONSHIPS</span><span>01 — 03</span></div>
+        <img src="assets/spatial-study.svg" alt="주호, 주동, 단지의 관계를 표현한 개념적 주거공간 드로잉" data-i18n-alt="heroAlt" class="spatial-art" width="900" height="850" fetchpriority="high">
+        <figcaption><span>UNIT <i>—</i> BUILDING <i>—</i> COMPLEX</span><span data-i18n="conceptIllustration">개념 일러스트레이션</span></figcaption>
+      </figure>
+    </section>
+
+    <div class="latest-strip wrap">
+      <span class="latest-label"><span class="status-dot"></span><span data-i18n="recentPublication">최근 논문</span></span>
+      <a href="https://doi.org/10.1108/OHI-04-2026-0146" target="_blank" rel="noopener noreferrer"><span data-i18n="recentTitle">공공임대주택의 공간 위계, 주거만족도와 웰빙</span><span class="latest-journal">Open House International · 2026</span><span aria-hidden="true">↗</span></a>
+    </div>
+
+    <section class="section research-section wrap" id="research" aria-labelledby="research-heading">
+      <div class="section-heading"><div><p class="eyebrow section-index">01 / RESEARCH</p><h2 id="research-heading" data-i18n="researchHeading">공간에서 시작되는 더 나은 일상</h2></div><p class="section-intro" data-i18n="researchIntro">사람과 환경의 관계를 이해하고, 그 이해를 구체적인 공간의 변화로 연결합니다.</p></div>
+      <div class="research-grid">
+        <article class="research-card"><div class="research-card-top"><span>01</span><svg viewBox="0 0 100 74" fill="none" aria-hidden="true"><path d="M12 59V33l25-17 25 17v26H12Z"/><path d="M26 59V40h22v19M58 59h30V26L67 12 52 22M70 33h8v12h-8"/><path d="M10 64h80"/></svg></div><h3 data-i18n="research1Title">주거환경과 웰빙</h3><p class="research-en">Housing & Wellbeing</p><p class="research-desc" data-i18n="research1Desc">공공임대주택의 주호·주동·단지에서 거주자의 만족도와 심리적 회복 경험을 살펴보고, 삶의 질을 지원하는 환경을 탐구합니다.</p><div class="research-keywords"><span>Housing</span><span>Restoration</span></div></article>
+        <article class="research-card"><div class="research-card-top"><span>02</span><svg viewBox="0 0 100 74" fill="none" aria-hidden="true"><path d="M21 61V20h40v41M31 61V31h20v30M11 63h78M61 47c22 0 26-20 26-30-16 0-31 13-26 30ZM61 47l19-23M61 47v16"/></svg></div><h3 data-i18n="research2Title">지속가능한 공간디자인</h3><p class="research-en">Sustainable Environments</p><p class="research-desc" data-i18n="research2Desc">WELL, LEED, G-SEED와 SDGs를 바탕으로 건강과 환경의 가치를 함께 고려하는 주거·문화·실내공간의 디자인 전략을 연구합니다.</p><div class="research-keywords"><span>WELL · LEED</span><span>Sustainability</span></div></article>
+        <article class="research-card"><div class="research-card-top"><span>03</span><svg viewBox="0 0 100 74" fill="none" aria-hidden="true"><rect x="30" y="23" width="40" height="29" rx="1"/><circle cx="50" cy="10" r="6"/><circle cx="50" cy="65" r="6"/><circle cx="15" cy="37" r="6"/><circle cx="85" cy="37" r="6"/><path d="M50 16v7M50 52v7M21 37h9M70 37h9M40 32h19M40 39h13M40 46h19"/></svg></div><h3 data-i18n="research3Title">사용자 참여와 공간 경험</h3><p class="research-en">Participatory Spatial Design</p><p class="research-desc" data-i18n="research3Desc">현장 관찰과 인터뷰, 디자인 슈렛을 통해 사용자의 요구를 읽고, 다양한 경험과 생활 맥락을 공간 개선안에 담습니다.</p><div class="research-keywords"><span>Co-design</span><span>Spatial Experience</span></div></article>
+        <article class="research-card"><div class="research-card-top"><span>04</span><svg viewBox="0 0 100 74" fill="none" aria-hidden="true"><path d="m50 9 33 18v30L50 74 17 57V27L50 9ZM17 27l33 18 33-18M50 45v29M50 9v29M17 57l33-19 33 19"/><path d="m33 18 33 18v30M33 66V36l33-18" opacity=".5"/></svg></div><h3 data-i18n="research4Title">디지털 공간디자인</h3><p class="research-en">Digital Spatial Design</p><p class="research-desc" data-i18n="research4Desc">생성형 AI, 3D 모델링과 실시간 시각화를 디자인 과정에 연결합니다. 가상공간에서의 표현과 경험 평가를 연구·교육 방향으로 확장합니다.</p><div class="research-keywords"><span>AI · Visualization</span><span>Virtual Space</span></div></article>
+      </div>
+      <div class="projects-block"><div class="projects-label"><span class="eyebrow">RESEARCH PROJECTS</span><h3 data-i18n="projectsHeading">주요 연구 과제</h3></div><div class="project-list">
+        <div class="project-row"><span class="project-year">2025–2026</span><div><h4 data-i18n="project1Title">공공임대주택단지 거주자의 웰빙을 고려한 실내 환경 계획 및 디자인 모델 개발</h4><p data-i18n="project1Meta">한국연구재단 · 책임연구원</p></div></div>
+        <div class="project-row"><span class="project-year">2023–2024</span><div><h4 data-i18n="project2Title">서울시 주거 안전 취약계층 거처 상태 및 실태 조사</h4><p data-i18n="project2Meta">서울시 · 공동연구원</p></div></div>
+        <div class="project-row"><span class="project-year">2021–2022</span><div><h4 data-i18n="project3Title">웰빙을 고려한 업무 공간의 환경 디자인 평가 및 개선방안 연구</h4><p data-i18n="project3Meta">한국연구재단 · 공동연구원</p></div></div>
+      </div></div>
+    </section>
+
+    <section class="publications-section section" id="publications" aria-labelledby="publications-heading"><div class="wrap">
+      <div class="section-heading"><div><p class="eyebrow section-index">02 / PUBLICATIONS</p><h2 id="publications-heading" data-i18n="publicationsHeading">연구를 담은 기록</h2></div><a class="text-link" href="https://scholar.google.com/citations?user=pUCBr34AAAAJ&hl=en" target="_blank" rel="noopener noreferrer"><span data-i18n="viewScholar">Google Scholar 프로필</span><span aria-hidden="true">↗</span></a></div>
+      <div class="publication-toolbar"><div class="publication-filters" role="group" aria-label="Publication category"><button type="button" class="filter active" data-filter="all" aria-pressed="true"><span data-i18n="filterAll">전체</span><span class="filter-count">12</span></button><button type="button" class="filter" data-filter="international" aria-pressed="false"><span data-i18n="filterInternational">국제학술지</span><span class="filter-count">4</span></button><button type="button" class="filter" data-filter="domestic" aria-pressed="false"><span data-i18n="filterDomestic">국내학술지</span><span class="filter-count">8</span></button></div><label class="publication-search"><svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="8.5" cy="8.5" r="5.5"/><path d="m13 13 4 4"/></svg><input id="publication-search" type="search" placeholder="논문 제목, 키워드 검색" aria-label="논문 제목, 키워드 검색" data-i18n-placeholder="searchPlaceholder" autocomplete="off"></label></div>
+      <div class="publication-results-meta"><span data-i18n="selectedPublications">Selected journal articles</span><span id="publication-count" role="status" aria-live="polite"></span></div>
+      <div id="publication-list" class="publication-list"></div>
+      <noscript><p>논문 목록을 보려면 JavaScript를 활성화해 주세요. <a href="https://scholar.google.com/citations?user=pUCBr34AAAAJ&hl=en">Google Scholar에서 논문 보기</a></p></noscript>
+      <div class="publications-bottom"><p data-i18n="publicationNote">주요 학술지 논문을 수록했습니다. 개별 논문의 DOI·학술지 링크에서 상세 정보를 확인할 수 있습니다.</p><button class="button button-outline" id="show-more-publications" type="button"><span data-i18n="showMore">논문 더 보기</span><span aria-hidden="true">↓</span></button></div>
+    </div></section>
+
+    <section class="section teaching-section wrap" id="teaching" aria-labelledby="teaching-heading">
+      <div class="section-heading"><div><p class="eyebrow section-index">03 / TEACHING</p><h2 id="teaching-heading" data-i18n="teachingHeading">관찰에서 설계, 그리고 표현까지</h2></div><p class="section-intro" data-i18n="teachingIntro">실제 공간의 문제를 발견하고, 아이디어를 검증하며, 자신의 디자인 언어로 전달하는 과정을 함께합니다.</p></div>
+      <div class="course-grid">
+        <article class="course-card"><div class="course-visual visual-digital" aria-hidden="true"><span class="course-visual-label">01 / DIGITAL EXPLORATION</span><svg viewBox="0 0 360 200" fill="none"><path d="M65 132 180 69l115 63-115 62-115-62Z" fill="#c7cfbd"/><path d="m65 95 115-63 115 63-115 62L65 95Z" fill="#e5e8de" stroke="#56644e"/><path d="M65 95v37m115 25v37m115-99v37" stroke="#56644e"/><path d="m180 32 115 63-115 62V32Z" fill="#d7decc"/><path d="m93 95 87-47 87 47-87 47-87-47Z" stroke="#6f7c63" stroke-dasharray="3 4"/><path d="m180 66 49 27-49 27-49-27 49-27Z" fill="#bb7250"/><path d="M180 66V45m49 48V72m-98 21V72" stroke="#bb7250"/></svg><span class="course-visual-foot">IDEA → MODEL → EXPERIENCE</span></div><div class="course-content"><p class="course-category" data-i18n="course1Category">디지털 설계 · 시각화</p><h3 data-i18n="course1Title">디지털공간디자인2</h3><p class="course-en">Digital Space Design 2</p><p data-i18n="course1Desc">AI를 활용한 아이디어 탐색부터 3D 모델링, 실시간 렌더링까지. 디지털 도구를 통해 공간을 구체화하고 설계의 가능성을 비교합니다.</p><details><summary><span data-i18n="courseDetails">수업 자세히 보기</span><span class="details-plus" aria-hidden="true">+</span></summary><div class="course-detail"><p data-i18n="course1Detail">여러 디자인 대안을 비교해 하나의 공간으로 발전시키고, 실제 공간의 리모델링을 제안합니다. 모델·이미지·패널을 통해 설계 의도를 전달합니다.</p><div class="course-tools"><span>SketchUp</span><span>Enscape</span><span>Generative AI</span></div></div></details></div></article>
+        <article class="course-card"><div class="course-visual visual-studio" aria-hidden="true"><span class="course-visual-label">02 / DESIGN IN CONTEXT</span><svg viewBox="0 0 360 200" fill="none"><rect x="79" y="39" width="201" height="130" stroke="#907962"/><path d="M79 80h83V39m0 41v49H79m83 0h118M214 39v54h66M214 129v40" stroke="#907962" stroke-width="3"/><path d="M164 169v-40a39 39 0 0 1 39 40" stroke="#907962" stroke-width="1"/><rect x="94" y="96" width="47" height="18" fill="#c49578"/><circle cx="240" cy="64" r="15" fill="#a1ad8e"/><circle cx="237" cy="149" r="10" fill="#a1ad8e"/><path d="M65 24h228M65 24v153M293 24v153" stroke="#b3a28f" stroke-width=".7"/><path d="M63 21l4 6m224-6 4 6" stroke="#907962"/></svg><span class="course-visual-foot">OBSERVE → DEFINE → DESIGN</span></div><div class="course-content"><p class="course-category" data-i18n="course2Category">프로젝트 기반 학습 · 지역 연계</p><h3 data-i18n="course2Title">공간디자인스튜디오2</h3><p class="course-en">Space Design Studio 2</p><p data-i18n="course2Desc">현장과 사용자에 대한 이해를 바탕으로 실제 공간의 개선안을 제안합니다. 조사와 콘셉트, 계획과 시각화를 하나의 설계 과정으로 연결합니다.</p><details><summary><span data-i18n="courseDetails">수업 자세히 보기</span><span class="details-plus" aria-hidden="true">+</span></summary><div class="course-detail"><p data-i18n="course2Detail">삼성문화회관 리모델링 프로젝트를 통해 지역과 문화의 연결을 탐구합니다. 현장 관찰, 사용자 시나리오, 팀 설계와 피드백을 거쳐 공간 개선안을 발전시킵니다.</p><div class="course-tools"><span>PBL</span><span>Site Research</span><span>Community</span></div></div></details></div></article>
+        <article class="course-card"><div class="course-visual visual-portfolio" aria-hidden="true"><span class="course-visual-label">03 / DESIGN NARRATIVE</span><svg viewBox="0 0 360 200" fill="none"><path d="m93 43 99-6 67 12v125l-67-12-99 6V43Z" fill="#f7f6ef" stroke="#809486"/><path d="M192 37v125" stroke="#809486"/><rect x="108" y="60" width="65" height="54" fill="#bbc8b8"/><path d="m117 100 20-22 26 22" stroke="#58715f"/><path d="m207 67 37 6m-37 7 37 6m-37 7 25 4M108 130h65m-65 8h48m51-24 37 6m-37 7 37 6" stroke="#809486"/><rect x="207" y="139" width="18" height="7" fill="#bb7250"/></svg><span class="course-visual-foot">CURATE → STRUCTURE → COMMUNICATE</span></div><div class="course-content"><p class="course-category" data-i18n="course3Category">디자인 커뮤니케이션 · 편집</p><h3 data-i18n="course3Title">디자인 포트폴리오</h3><p class="course-en">Design Portfolio</p><p data-i18n="course3Desc">프로젝트의 결과와 그 안에 담긴 사고 과정을 읽기 쉬운 이야기로 구성합니다. 나만의 관점과 디자인 역량을 설득력 있게 전달합니다.</p><details><summary><span data-i18n="courseDetails">수업 자세히 보기</span><span class="details-plus" aria-hidden="true">+</span></summary><div class="course-detail"><p data-i18n="course3Detail">프로젝트 선정, 과정 정리, 페이지 구성과 시각적 위계를 다룹니다. 중간 피드백과 발표를 통해 포트폴리오의 완성도와 전달력을 높입니다.</p><div class="course-tools"><span>Editorial Design</span><span>Storytelling</span></div></div></details></div></article>
+      </div>
+      <div class="other-courses"><span data-i18n="otherCourses">그 외 담당 교과목</span><div><span data-i18n="otherCourse1">공간디자인스튜디오3</span><span data-i18n="otherCourse2">실내공간코디네이션</span><span data-i18n="otherCourse3">졸업작품</span></div></div>
+    </section>
+
+    <section class="section about-section" id="about" aria-labelledby="about-heading"><div class="wrap about-grid">
+      <div class="about-photo-column"><p class="eyebrow section-index">04 / ABOUT</p><figure class="portrait"><img src="assets/seunghee-lee.jpg" width="2859" height="3676" alt="이승희 교수" data-i18n-alt="portraitAlt" loading="lazy"><figcaption>Seunghee Lee, Ph.D.<span data-i18n="portraitCaption">전북대학교 · 주거환경학과</span></figcaption></figure></div>
+      <div class="about-copy"><h2 id="about-heading" data-i18n="aboutHeading">공간과 사람 사이를 연구합니다.</h2><p class="about-lead" data-i18n="aboutLead">이승희는 전북대학교 주거환경학과 조교수로, 주거환경과 실내공간이 사람의 경험과 웰빙에 미치는 영향을 연구합니다.</p><p class="about-description" data-i18n="aboutDescription">프랑스에서 공간디자인을 공부하고 연세대학교에서 실내건축학 박사학위를 취득했습니다. 전시·공간디자인 실무 경험을 바탕으로, 사용자의 삶에 가까운 문제를 연구와 교육으로 연결합니다.</p>
+        <div class="bio-columns"><div><h3 data-i18n="education">학력</h3><div class="education-item"><span>2024</span><div><strong>Ph.D. · Yonsei University</strong><p>Interior Architecture and Built Environment</p></div></div><div class="education-item"><span>2013</span><div><strong>M.A. · Haute école des arts du Rhin</strong><p>Space Design · Strasbourg, France</p></div></div><div class="education-item"><span>2010</span><div><strong>B.A. · École nationale supérieure des beaux-arts de Lyon</strong><p>Space Design · Lyon, France</p></div></div></div>
+        <div><h3 data-i18n="academicExperience">주요 경력</h3><div class="career-item"><span data-i18n="currentYears">2025–현재</span><strong data-i18n="careerCurrent">전북대학교 조교수</strong></div><div class="career-item"><span>2022–2025</span><strong data-i18n="careerTeaching">가톨릭대 · 중앙대 · 연세대 강사</strong></div><div class="career-item"><span>2021–2025</span><strong data-i18n="careerResearch">Yonsei Symbiotic Life-Tech Lab 전문연구원</strong></div><details class="practice-details"><summary><span data-i18n="practiceExperience">디자인 실무 경력</span><span class="details-plus" aria-hidden="true">+</span></summary><ul><li><span>2018–2020</span>Daehong Communications · Seoul</li><li><span>2015–2018</span>Sigongtech · Pangyo</li><li><span>2013–2014</span>Kascen · Brussels</li><li><span>2010</span>Acte 2 Lumière · Lyon</li></ul></details></div></div>
+        <a class="text-link" href="https://housing.jbnu.ac.kr/jbnuProfl/housing/947/8233/artclView.do" target="_blank" rel="noopener noreferrer"><span data-i18n="officialProfile">전북대학교 공식 교수 소개</span><span aria-hidden="true">↗</span></a>
+      </div>
+    </div></section>
+
+    <section class="contact-section section" id="contact" aria-labelledby="contact-heading"><div class="wrap"><div class="contact-top"><div><p class="eyebrow section-index">05 / CONTACT</p><h2 id="contact-heading" data-i18n="contactHeading">더 나은 공간을 위한 대화</h2><p data-i18n="contactIntro">연구 협력과 학술 교류, 공간디자인 교육에 관한 문의를 환영합니다.</p></div><a class="contact-email" href="mailto:seungheelee@jbnu.ac.kr">seungheelee@jbnu.ac.kr <span aria-hidden="true">↗</span></a></div><div class="contact-bottom"><div><span class="contact-label" data-i18n="affiliationLabel">소속</span><p data-i18n="contactAffiliation">전북대학교 생활과학대학<br>주거환경학과</p></div><div><span class="contact-label" data-i18n="officeLabel">연구실</span><p data-i18n="contactOffice">생활과학대학 513호<br>전북특별자치도 전주시 덕진구 백제대로 567</p></div><div><span class="contact-label" data-i18n="linksLabel">바로가기</span><a href="https://scholar.google.com/citations?user=pUCBr34AAAAJ&hl=en" target="_blank" rel="noopener noreferrer">Google Scholar ↗</a><a href="https://housing.jbnu.ac.kr/housing/index.do" target="_blank" rel="noopener noreferrer" data-i18n="departmentLink">주거환경학과 ↗</a></div></div></div></section>
+  </main>
+  <footer class="site-footer wrap"><span>© <span id="copyright-year">2026</span> Seunghee Lee</span><span>SPACE, PEOPLE & WELLBEING</span><a href="#home"><span data-i18n="backToTop">맨 위로</span> ↑</a></footer>
+  <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+</body>
+</html>
