@@ -21,7 +21,7 @@ const translations = {
   }
 };
 
-const state={lang:'ko',filter:'all',query:'',expanded:false};
+const state={lang:'en',filter:'all',query:'',expanded:false};
 const publications=Array.isArray(window.PUBLICATIONS)?window.PUBLICATIONS:[];
 const escapeHTML=value=>String(value??'').replace(/[&<>"']/g,ch=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
 const t=key=>translations[state.lang][key]??translations.ko[key]??key;
@@ -65,7 +65,6 @@ function setLanguage(lang){
   officialProfile.href=state.lang==='ko'?'https://housing.jbnu.ac.kr/jbnuProfl/housing/947/8233/artclView.do':'https://top.jbnu.ac.kr/jbnuProfl/housingeng/974/8418/artclView.do';
   const departmentLink=document.querySelector('[data-i18n="departmentLink"]');
   departmentLink.href=state.lang==='ko'?'https://housing.jbnu.ac.kr/housing/index.do':'https://housing.jbnu.ac.kr/housingeng/index.do';
-  try{localStorage.setItem('seunghee-lee-language',state.lang);}catch{}
   renderPublications();
 }
 
@@ -171,7 +170,5 @@ if('IntersectionObserver' in window){
   document.querySelectorAll('main section[id]').forEach(section=>observer.observe(section));
 }
 
-let savedLanguage;
-try{savedLanguage=localStorage.getItem('seunghee-lee-language');}catch{}
-setLanguage(savedLanguage==='en'?'en':'ko');
+setLanguage('en');
 document.getElementById('copyright-year').textContent=new Date().getFullYear();
