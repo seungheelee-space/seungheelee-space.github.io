@@ -53,6 +53,7 @@ const translations = {
 
 const state={lang:'en',filter:'all',query:'',expanded:false};
 const publications=Array.isArray(window.PUBLICATIONS)?window.PUBLICATIONS:[];
+const conferencePapers=Array.isArray(window.CONFERENCE_PAPERS)?window.CONFERENCE_PAPERS:[];
 const escapeHTML=value=>String(value??'').replace(/[&<>"']/g,ch=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
 const t=key=>translations[state.lang][key]??translations.ko[key]??key;
 const menuToggle=document.getElementById('menu-toggle');
@@ -111,6 +112,7 @@ function setLanguage(lang){
   const departmentLink=document.querySelector('[data-i18n="departmentLink"]');
   departmentLink.href='https://housing.jbnu.ac.kr/housing/index.do';
   renderPublications();
+  renderConferencePapers();
 }
 
 function articleTitle(pub){
@@ -155,6 +157,25 @@ function renderPublications(){
     const active=button.dataset.filter===state.filter;
     button.classList.toggle('active',active);button.setAttribute('aria-pressed',String(active));
   });
+  scheduleNavigationUpdate();
+}
+
+function renderConferencePapers(){
+  const list=document.getElementById('conference-paper-list');
+  if(!list)return;
+  list.innerHTML=conferencePapers.map(paper=>{
+    const english=state.lang==='en';
+    const title=english&&paper.title_en?paper.title_en:paper.title_ko;
+    const titleLanguage=english&&paper.title_en?'en':'ko';
+    const names=english&&paper.authors_en?paper.authors_en:paper.authors_ko;
+    const authors=names.map(name=>['Seunghee Lee','이승희'].includes(name)?`<strong>${escapeHTML(name)}</strong>`:escapeHTML(name)).join(' · ');
+    const volume=paper.volume?`, ${paper.volume}${paper.issue?`(${paper.issue})`:''}`:'';
+    const pages=paper.pages?`, ${paper.pages}`:'';
+    const venue=(english?paper.venue_en:paper.venue_ko)+volume+pages;
+    const note=english?paper.note_en:paper.note_ko;
+    const links=paper.links.map(link=>`<a class="conference-source" href="${escapeHTML(link.url)}" target="_blank" rel="noopener noreferrer">${escapeHTML(link.label)} <span aria-hidden="true">↗</span></a>`).join(' ');
+    return `<article class="conference-paper" data-conference-id="${escapeHTML(paper.id)}"><time class="conference-year" datetime="${escapeHTML(paper.date)}">${escapeHTML(paper.year)}</time><div class="conference-body"><h4 class="conference-title" lang="${titleLanguage}">${escapeHTML(title)}</h4><p class="conference-authors" lang="${english&&paper.authors_en?'en':'ko'}">${authors}</p><p class="conference-venue">${escapeHTML(venue)}</p>${note?`<p class="conference-note">${escapeHTML(note)}</p>`:''}<div class="conference-links">${links}</div></div></article>`;
+  }).join('');
   scheduleNavigationUpdate();
 }
 

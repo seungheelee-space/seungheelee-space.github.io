@@ -23,9 +23,10 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;450;500;550;600;650;700&family=Manrope:wght@400;500;600;700&family=Noto+Sans+KR:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=publication-dropdown-20261101">
+  <link rel="stylesheet" href="styles.css?v=conference-papers-20261101">
   <script src="publications.js" defer></script>
-  <script src="app.js?v=publication-dropdown-20261101b" defer></script>
+  <script src="conference-papers.js?v=conference-papers-20261101" defer></script>
+  <script src="app.js?v=conference-papers-20261101" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main" data-i18n="skip">Skip to content</a>
@@ -41,6 +42,7 @@
           <div class="nav-dropdown-heading"><a class="primary-nav-link" href="#publications" data-i18n="navPublications">Publications</a><button class="nav-dropdown-toggle" type="button" aria-expanded="false" aria-controls="desktop-publications-menu" aria-label="Open publication sections"><svg viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="m3 5 4 4 4-4"/></svg></button></div>
           <div class="nav-dropdown-panel" id="desktop-publications-menu" hidden>
             <a href="#published-articles" lang="en" data-i18n="publishedArticles">Published Journal Articles (Peer-reviewed)</a>
+            <a href="#conference-papers" lang="en">Conference Papers</a>
             <a href="#current-working-papers" lang="en">Current Working Papers</a>
           </div>
         </div>
@@ -61,6 +63,7 @@
         <div class="nav-dropdown-heading"><a href="#publications" data-i18n="navPublications">Publications</a><button class="nav-dropdown-toggle" type="button" aria-expanded="false" aria-controls="mobile-publications-menu" aria-label="Open publication sections"><svg viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="m3 5 4 4 4-4"/></svg></button></div>
         <div class="nav-dropdown-panel" id="mobile-publications-menu" hidden>
           <a href="#published-articles" lang="en" data-i18n="publishedArticles">Published Journal Articles (Peer-reviewed)</a>
+          <a href="#conference-papers" lang="en">Conference Papers</a>
           <a href="#current-working-papers" lang="en">Current Working Papers</a>
         </div>
       </div>
@@ -117,6 +120,10 @@
       <div id="publication-list" class="publication-list"></div>
       <noscript><p>Enable JavaScript to view the publication list. <a href="https://scholar.google.com/citations?user=pUCBr34AAAAJ&hl=en">View publications on Google Scholar</a></p></noscript>
       <div class="publications-bottom"><p data-i18n="publicationNote">A selection of journal articles. Follow the DOI or journal links for publication details and access information.</p><button class="button button-outline" id="show-more-publications" type="button"><span data-i18n="showMore">View more articles</span><span aria-hidden="true">↓</span></button></div>
+      </div>
+      <div id="conference-papers" class="conference-papers" role="region" aria-labelledby="conference-papers-heading">
+        <h3 id="conference-papers-heading" class="publication-subheading" lang="en">Conference Papers</h3>
+        <div id="conference-paper-list" class="conference-paper-list"></div>
       </div>
       <div id="current-working-papers" class="working-papers" role="region" aria-labelledby="working-papers-heading">
         <p class="eyebrow" data-i18n="workingPapersIntro">RESEARCH IN PROGRESS</p>
