@@ -14,3 +14,6 @@ html[lang=en] .research-en,html[lang=en] .course-en{display:none}
 @media(max-width:700px){.research-desc{font-size:11px;min-height:135px}.publication h3{font-size:14px}.publication.domestic h3{font-size:13px}.publication-summary{font-size:11px}.publication-journal{font-size:10px}.research-keywords span{font-size:7px}}
 
 html[lang=en] .hero-name{display:block}html[lang=en] .hero-name .name-divider{display:none}html[lang=en] .hero-name strong{display:block;margin-bottom:7px}
+
+/* Graduation exhibition belongs with the graduation project course. */
+.course-exhibition-link{margin-bottom:22px;font-size:11px;gap:10px}
