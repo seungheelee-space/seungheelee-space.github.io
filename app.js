@@ -3,6 +3,7 @@
 const translations = {
   ko: {
     publishedArticles:'Published Journal Articles (Peer-reviewed)',workingPapersIntro:'진행 중인 연구 논문',
+    openPublications:'논문 하위 메뉴 열기',closePublications:'논문 하위 메뉴 닫기',
     skip:'본문으로 이동',brandSub:'공간 · 사람 · 웰빙',navResearch:'연구',navPublications:'논문',navTeaching:'수업',navAbout:'소개',navContact:'연락처',
     heroName:'이승희',heroRole:'전북대학교 주거환경학과 조교수',heroDescription:'일상 속 공간이 우리의 삶에 미치는 영향을 탐구합니다. 주거환경과 회복 경험, 지속가능성을 아우르는 공간디자인 연구와 교육을 이어갑니다.',exploreResearch:'연구 살펴보기',heroDepartment:'Department of Housing Environmental Design',heroAlt:'주호, 주동, 단지의 관계를 표현한 개념적 주거공간 드로잉',conceptIllustration:'개념 일러스트레이션',recentPublication:'최근 논문',recentTitle:'공공임대주택의 공간 위계, 주거만족도와 웰빙',
     researchHeading:'공간에서 시작되는 더 나은 일상',researchIntro:'사람과 환경의 관계를 이해하고, 그 이해를 구체적인 공간의 변화로 연결합니다.',research1Title:'주거환경과 웰빙',research1Desc:'공공임대주택의 주호·주동·단지에서 거주자의 만족도와 심리적 회복 경험을 살펴보고, 삶의 질을 지원하는 환경을 탐구합니다.',research2Title:'지속가능한 공간디자인',research2Desc:'WELL, LEED, G-SEED와 SDGs를 바탕으로 건강과 환경의 가치를 함께 고려하는 주거·문화·실내공간의 디자인 전략을 연구합니다.',research3Title:'사용자 참여와 공간 경험',research3Desc:'현장 관찰과 인터뷰, 디자인 슈렛을 통해 사용자의 요구를 읽고, 다양한 경험과 생활 맥락을 공간 개선안에 담습니다.',research4Title:'디지털 공간디자인',research4Desc:'생성형 AI, 3D 모델링과 실시간 시각화를 디자인 과정에 연결합니다. 가상공간에서의 표현과 경험 평가를 연구·교육 방향으로 확장합니다.',projectsHeading:'주요 연구 과제',project1Title:'공공임대주택단지 거주자의 웰빙을 고려한 실내 환경 계획 및 디자인 모델 개발',project1Meta:'한국연구재단 · 책임연구원',project2Title:'서울시 주거 안전 취약계층 거처 상태 및 실태 조사',project2Meta:'서울시 · 공동연구원',project3Title:'웰빙을 고려한 업무 공간의 환경 디자인 평가 및 개선방안 연구',project3Meta:'한국연구재단 · 공동연구원',
@@ -26,6 +27,7 @@ const translations = {
   },
   en: {
     publishedArticles:'Published Journal Articles (Peer-reviewed)',workingPapersIntro:'RESEARCH IN PROGRESS',
+    openPublications:'Open publication sections',closePublications:'Close publication sections',
     skip:'Skip to content',brandSub:'SPACE, PEOPLE & WELLBEING',navResearch:'Research',navPublications:'Publications',navTeaching:'Teaching',navAbout:'About',navContact:'Contact',
     heroName:'Seunghee Lee',heroRole:'Assistant Professor · Jeonbuk National University',heroDescription:'Exploring how everyday environments shape our lives. Research and teaching at the intersection of housing, restorative experience and sustainable spatial design.',exploreResearch:'Explore research',heroDepartment:'Department of Housing Environmental Design',heroAlt:'Conceptual axonometric drawing of housing at the unit, building and complex scales',conceptIllustration:'Concept illustration',recentPublication:'LATEST PAPER',recentTitle:'Spatial hierarchies, residential satisfaction and wellbeing',
     researchHeading:'Better living begins with space.',researchIntro:'Understanding the relationship between people and their environments—and translating that understanding into thoughtful spatial change.',research1Title:'Housing & Wellbeing',research1Desc:'Investigating residential satisfaction and psychological restoration across housing units, buildings and complexes, with a focus on public rental housing and quality of life.',research2Title:'Sustainable Environments',research2Desc:'Exploring design strategies that connect human wellbeing and sustainability through WELL, LEED, G-SEED and the SDGs in residential, cultural and interior spaces.',research3Title:'Participatory Spatial Design',research3Desc:'Bringing user needs and lived experience into spatial improvements through observation, interviews and design charrettes.',research4Title:'Digital Spatial Design',research4Desc:'Connecting generative AI, 3D modeling and real-time visualization with the design process, while exploring representation and experience evaluation in virtual environments.',projectsHeading:'Selected research projects',project1Title:'Interior environment planning and design models for resident wellbeing in public rental housing complexes',project1Meta:'National Research Foundation of Korea · Principal Researcher',project2Title:'Housing conditions of residents vulnerable to housing safety risks in Seoul',project2Meta:'Seoul Metropolitan Government · Co-researcher',project3Title:'Evaluation and improvement of workplace environmental design for wellbeing',project3Meta:'National Research Foundation of Korea · Co-researcher',
@@ -55,6 +57,7 @@ const escapeHTML=value=>String(value??'').replace(/[&<>"']/g,ch=>({'&':'&amp;','
 const t=key=>translations[state.lang][key]??translations.ko[key]??key;
 const menuToggle=document.getElementById('menu-toggle');
 const mobileNav=document.getElementById('mobile-nav');
+const publicationMenus=document.querySelectorAll('[data-publications-menu]');
 let toastTimer;
 
 function announce(message){
@@ -69,6 +72,19 @@ function closeMenu(){
   menuToggle.setAttribute('aria-expanded','false');
   menuToggle.setAttribute('aria-label',t('openMenu'));
   mobileNav.hidden=true;
+  closePublicationMenus();
+}
+
+function setPublicationMenuOpen(menu,open){
+  const toggle=menu.querySelector('.nav-dropdown-toggle');
+  const panel=menu.querySelector('.nav-dropdown-panel');
+  toggle.setAttribute('aria-expanded',String(open));
+  toggle.setAttribute('aria-label',t(open?'closePublications':'openPublications'));
+  panel.hidden=!open;
+}
+
+function closePublicationMenus(){
+  publicationMenus.forEach(menu=>setPublicationMenuOpen(menu,false));
 }
 
 function setLanguage(lang){
@@ -89,6 +105,7 @@ function setLanguage(lang){
     el.classList.toggle('active',active);el.setAttribute('aria-pressed',String(active));
   });
   menuToggle.setAttribute('aria-label',t(menuToggle.getAttribute('aria-expanded')==='true'?'closeMenu':'openMenu'));
+  closePublicationMenus();
   const officialProfile=document.querySelector('.about-copy > .text-link');
   officialProfile.href='https://top.jbnu.ac.kr/housing/8466/subview.do?enc=Zm5jdDF8QEB8JTJGamJudVByb2ZsJTJGaG91c2luZyUyRjk0NyUyRjgyMzMlMkZhcnRjbFZpZXcuZG8lM0ZwYWdlJTNEMSUyNmZpbmRUeXBlJTNEJTI2ZmluZFdvcmQlM0QlMjY%3D';
   const departmentLink=document.querySelector('[data-i18n="departmentLink"]');
@@ -167,13 +184,41 @@ async function copyCitation(id,button){
 }
 
 document.querySelectorAll('[data-set-lang]').forEach(button=>button.addEventListener('click',()=>setLanguage(button.dataset.setLang)));
+publicationMenus.forEach(menu=>{
+  const toggle=menu.querySelector('.nav-dropdown-toggle');
+  const panel=menu.querySelector('.nav-dropdown-panel');
+  const desktop=Boolean(menu.closest('.desktop-nav'));
+  toggle.addEventListener('click',()=>setPublicationMenuOpen(menu,toggle.getAttribute('aria-expanded')!=='true'));
+  toggle.addEventListener('keydown',event=>{
+    if(event.key==='ArrowDown'){
+      event.preventDefault();setPublicationMenuOpen(menu,true);panel.querySelector('a').focus();
+    }
+  });
+  if(desktop){
+    menu.addEventListener('pointerenter',event=>{if(event.pointerType==='mouse')setPublicationMenuOpen(menu,true);});
+    menu.addEventListener('pointerleave',event=>{
+      if(event.pointerType==='mouse'&&!menu.contains(document.activeElement))setPublicationMenuOpen(menu,false);
+    });
+  }
+  menu.addEventListener('focusout',event=>{if(!menu.contains(event.relatedTarget))setPublicationMenuOpen(menu,false);});
+  menu.addEventListener('keydown',event=>{
+    if(event.key==='Escape'&&!panel.hidden){
+      event.preventDefault();event.stopPropagation();setPublicationMenuOpen(menu,false);toggle.focus();
+    }
+  });
+  menu.querySelectorAll('a').forEach(link=>link.addEventListener('click',closePublicationMenus));
+});
+document.addEventListener('pointerdown',event=>{
+  if(!event.target.closest?.('[data-publications-menu]'))closePublicationMenus();
+});
 menuToggle.addEventListener('click',()=>{
   const willOpen=menuToggle.getAttribute('aria-expanded')!=='true';
   menuToggle.setAttribute('aria-expanded',String(willOpen));menuToggle.setAttribute('aria-label',t(willOpen?'closeMenu':'openMenu'));mobileNav.hidden=!willOpen;
+  if(!willOpen)closePublicationMenus();
 });
 mobileNav.querySelectorAll('a').forEach(link=>link.addEventListener('click',closeMenu));
 document.addEventListener('keydown',event=>{if(event.key==='Escape'&&!mobileNav.hidden){closeMenu();menuToggle.focus();}});
-window.matchMedia('(min-width: 701px)').addEventListener('change',event=>{if(event.matches)closeMenu();});
+window.matchMedia('(min-width: 701px)').addEventListener('change',event=>{closePublicationMenus();if(event.matches)closeMenu();});
 document.querySelectorAll('[data-filter]').forEach(button=>button.addEventListener('click',()=>{state.filter=button.dataset.filter;state.expanded=false;renderPublications();}));
 document.getElementById('publication-search').addEventListener('input',event=>{state.query=event.target.value;state.expanded=false;renderPublications();});
 document.getElementById('show-more-publications').addEventListener('click',()=>{
@@ -186,7 +231,7 @@ document.getElementById('publication-list').addEventListener('click',event=>{
   if(event.target.closest('#reset-publication-search')){state.query='';state.filter='all';state.expanded=false;document.getElementById('publication-search').value='';renderPublications();document.getElementById('publication-search').focus();}
 });
 
-const navLinks=document.querySelectorAll('.desktop-nav a');
+const navLinks=document.querySelectorAll('.desktop-nav .primary-nav-link');
 const navSections=document.querySelectorAll('main > section[id]');
 let navUpdatePending=false;
 function updateNavigation(){
