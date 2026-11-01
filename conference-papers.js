@@ -144,6 +144,10 @@ window.CONFERENCE_PAPERS = [
       {
         "label": "AURIC",
         "url": "https://auric.or.kr/User/Rdoc/DocRdoc.aspx?dn=404386&returnVal=RD_R"
+      },
+      {
+        "label": "DBpia",
+        "url": "https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE10620030"
       }
     ],
     "title_en": "An Expert Survey to Identify the Design and Management Strategies for Reducing the Spread of COVID-19 in Workplaces",

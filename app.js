@@ -174,8 +174,9 @@ function renderConferencePapers(){
     const venue=(english?paper.venue_en:paper.venue_ko)+volume+pages;
     const note=english?paper.note_en:paper.note_ko;
     const award=english?paper.award_en:paper.award_ko;
-    const links=paper.links.map(link=>`<a class="conference-source" href="${escapeHTML(link.url)}" target="_blank" rel="noopener noreferrer">${escapeHTML(link.label)} <span aria-hidden="true">↗</span></a>`).join(' ');
-    return `<article class="conference-paper" data-conference-id="${escapeHTML(paper.id)}"><time class="conference-year" datetime="${escapeHTML(paper.date)}">${escapeHTML(paper.year)}</time><div class="conference-body"><h4 class="conference-title" lang="${titleLanguage}">${escapeHTML(title)}</h4><p class="conference-authors" lang="${english&&paper.authors_en?'en':'ko'}">${authors}</p><p class="conference-venue">${escapeHTML(venue)}</p>${award?`<p class="conference-award" lang="${english?'en':'ko'}">${escapeHTML(award)}</p>`:''}${note?`<p class="conference-note">${escapeHTML(note)}</p>`:''}<div class="conference-links">${links}</div></div></article>`;
+    const articleLink=(paper.links||[]).find(link=>/^https:\/\/(?:www\.)?dbpia\.co\.kr\/journal\/articleDetail\?/.test(link.url));
+    const articleAction=articleLink?`<div class="conference-links"><a class="conference-source" href="${escapeHTML(articleLink.url)}" target="_blank" rel="noopener noreferrer" lang="en">Read article <span aria-hidden="true">↗</span></a></div>`:'';
+    return `<article class="conference-paper" data-conference-id="${escapeHTML(paper.id)}"><time class="conference-year" datetime="${escapeHTML(paper.date)}">${escapeHTML(paper.year)}</time><div class="conference-body"><h4 class="conference-title" lang="${titleLanguage}">${escapeHTML(title)}</h4><p class="conference-authors" lang="${english&&paper.authors_en?'en':'ko'}">${authors}</p><p class="conference-venue">${escapeHTML(venue)}</p>${award?`<p class="conference-award" lang="${english?'en':'ko'}">${escapeHTML(award)}</p>`:''}${note?`<p class="conference-note">${escapeHTML(note)}</p>`:''}${articleAction}</div></article>`;
   }).join('');
   scheduleNavigationUpdate();
 }
