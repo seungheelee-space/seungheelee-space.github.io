@@ -21,7 +21,7 @@ const translations = {
     curriculumLink:"전북대학교 학과 교육과정",
     courseDetails:'수업 자세히 보기',
     portraitAlt:'이승희 교수',portraitCaption:'전북대학교 · 주거환경학과',aboutHeading:'공간과 사람 사이를 연구합니다.',aboutLead:'이승희는 전북대학교 주거환경학과 조교수로, 주거환경과 실내공간이 사람의 경험과 웰빙에 미치는 영향을 연구합니다.',aboutDescription:'프랑스에서 공간디자인을 공부하고 연세대학교에서 실내건축학 박사학위를 취득했습니다. 전시·공간디자인 실무 경험을 바탕으로, 사용자의 삶에 가까운 문제를 연구와 교육으로 연결합니다.',education:'학력',academicExperience:'주요 경력',currentYears:'2025–현재',careerCurrent:'전북대학교 조교수',careerTeaching:'가톨릭대 · 중앙대 · 연세대 강사',careerResearch:'Yonsei Symbiotic Life-Tech Lab 전문연구원',practiceExperience:'디자인 실무 경력',officialProfile:'전북대학교 공식 교수 소개',
-    contactHeading:'연구실 상담',contactIntro:'연구 협력과 학술 교류, 공간디자인 교육에 관한 문의를 환영합니다.',affiliationLabel:'소속',contactAffiliation:'전북대학교 생활과학대학<br>주거환경학과',officeLabel:'연구실',contactOffice:'생활과학대학 513호<br>전북특별자치도 전주시 덕진구 백제대로 567',linksLabel:'바로가기',departmentLink:'주거환경학과 ↗',backToTop:'맨 위로',openMenu:'메뉴 열기',closeMenu:'메뉴 닫기'
+    contactHeading:'연구실 상담',contactIntro:'연구 협력과 학술 교류, 공간디자인 교육에 관한 문의를 환영합니다.',affiliationLabel:'소속',contactAffiliation:'전북대학교 생활과학대학<br>주거환경학과',officeLabel:'연구실',contactOffice:'생활과학대학 513호<br>전북특별자치도 전주시 덕진구 백제대로 567',linksLabel:'바로가기',departmentLink:'주거환경학과 ↗',graduationExhibitionLink:'2026 졸업작품전시 ↗',backToTop:'맨 위로',openMenu:'메뉴 열기',closeMenu:'메뉴 닫기'
   },
   en: {
     skip:'Skip to content',brandSub:'SPACE, PEOPLE & WELLBEING',navResearch:'Research',navPublications:'Publications',navTeaching:'Teaching',navAbout:'About',navContact:'Contact',
@@ -43,7 +43,7 @@ const translations = {
     curriculumLink:"Department curriculum",
     courseDetails:'Explore the course',
     portraitAlt:'Portrait of Seunghee Lee',portraitCaption:'Housing Environmental Design · JBNU',aboutHeading:'Connecting people and place.',aboutLead:'Seunghee Lee is an Assistant Professor in the Department of Housing Environmental Design at Jeonbuk National University. Her research explores how residential and interior environments relate to human experience and wellbeing.',aboutDescription:'She studied space design in France and earned her Ph.D. in Interior Architecture and Built Environment at Yonsei University. Experience in exhibition and spatial design informs her research and teaching on the places of everyday life.',education:'Education',academicExperience:'Academic experience',currentYears:'2025–Present',careerCurrent:'Assistant Professor · Jeonbuk National University',careerTeaching:'Lecturer · The Catholic University of Korea, Chung-Ang University & Yonsei University',careerResearch:'Researcher · Yonsei Symbiotic Life-Tech Lab',practiceExperience:'Design practice',officialProfile:'Official JBNU faculty profile',
-    contactHeading:'A conversation about better spaces.',contactIntro:'For research collaboration, academic exchange and spatial design education.',affiliationLabel:'AFFILIATION',contactAffiliation:'Department of Housing Environmental Design<br>College of Human Ecology · JBNU',officeLabel:'OFFICE',contactOffice:'Room 513, College of Human Ecology<br>567 Baekje-daero, Deokjin-gu, Jeonju, South Korea',linksLabel:'ELSEWHERE',departmentLink:'Department website ↗',backToTop:'Back to top',openMenu:'Open menu',closeMenu:'Close menu'
+    contactHeading:'A conversation about better spaces.',contactIntro:'For research collaboration, academic exchange and spatial design education.',affiliationLabel:'AFFILIATION',contactAffiliation:'Department of Housing Environmental Design<br>College of Human Ecology · JBNU',officeLabel:'OFFICE',contactOffice:'Room 513, College of Human Ecology<br>567 Baekje-daero, Deokjin-gu, Jeonju, South Korea',linksLabel:'ELSEWHERE',departmentLink:'Department website ↗',graduationExhibitionLink:'2026 Graduation Exhibition ↗',backToTop:'Back to top',openMenu:'Open menu',closeMenu:'Close menu'
   }
 };
 
@@ -90,7 +90,7 @@ function setLanguage(lang){
   const officialProfile=document.querySelector('.about-copy > .text-link');
   officialProfile.href='https://top.jbnu.ac.kr/housing/8466/subview.do?enc=Zm5jdDF8QEB8JTJGamJudVByb2ZsJTJGaG91c2luZyUyRjk0NyUyRjgyMzMlMkZhcnRjbFZpZXcuZG8lM0ZwYWdlJTNEMSUyNmZpbmRUeXBlJTNEJTI2ZmluZFdvcmQlM0QlMjY%3D';
   const departmentLink=document.querySelector('[data-i18n="departmentLink"]');
-  departmentLink.href=state.lang==='ko'?'https://housing.jbnu.ac.kr/housing/index.do':'https://housing.jbnu.ac.kr/housingeng/index.do';
+  departmentLink.href='https://housing.jbnu.ac.kr/housing/index.do';
   renderPublications();
 }
 
