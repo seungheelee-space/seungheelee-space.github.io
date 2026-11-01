@@ -6,7 +6,7 @@ The site presents research areas, selected publications, teaching, biography and
 
 ## Website
 
-https://seungheelee0902-pixel.github.io/
+https://seungheelee-space.github.io/
 
 ## Structure
 
