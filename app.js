@@ -138,6 +138,7 @@ function renderPublications(){
     const active=button.dataset.filter===state.filter;
     button.classList.toggle('active',active);button.setAttribute('aria-pressed',String(active));
   });
+  scheduleNavigationUpdate();
 }
 
 function citationText(pub){
@@ -185,16 +186,32 @@ document.getElementById('publication-list').addEventListener('click',event=>{
   if(event.target.closest('#reset-publication-search')){state.query='';state.filter='all';state.expanded=false;document.getElementById('publication-search').value='';renderPublications();document.getElementById('publication-search').focus();}
 });
 
-if('IntersectionObserver' in window){
-  const navLinks=document.querySelectorAll('.desktop-nav a');
-  const observer=new IntersectionObserver(entries=>{
-    entries.forEach(entry=>{if(entry.isIntersecting){navLinks.forEach(link=>{
-      const current=link.hash===`#${entry.target.id}`;link.classList.toggle('current',current);
-      if(current)link.setAttribute('aria-current','location');else link.removeAttribute('aria-current');
-    });}});
-  },{rootMargin:'-15% 0px -65% 0px',threshold:0});
-  document.querySelectorAll('main section[id]').forEach(section=>observer.observe(section));
+const navLinks=document.querySelectorAll('.desktop-nav a');
+const navSections=document.querySelectorAll('main > section[id]');
+let navUpdatePending=false;
+function updateNavigation(){
+  navUpdatePending=false;
+  const marker=document.querySelector('.site-header').getBoundingClientRect().bottom+24;
+  const atEnd=window.scrollY+window.innerHeight>=document.documentElement.scrollHeight-2;
+  const section=atEnd?navSections[navSections.length-1]:Array.from(navSections).find(element=>{
+    const bounds=element.getBoundingClientRect();
+    return bounds.top<=marker&&bounds.bottom>marker;
+  });
+  navLinks.forEach(link=>{
+    const current=Boolean(section)&&link.hash===`#${section.id}`;
+    link.classList.toggle('current',current);
+    if(current)link.setAttribute('aria-current','location');else link.removeAttribute('aria-current');
+  });
 }
+function scheduleNavigationUpdate(){
+  if(navUpdatePending)return;
+  navUpdatePending=true;
+  window.requestAnimationFrame(updateNavigation);
+}
+window.addEventListener('scroll',scheduleNavigationUpdate,{passive:true});
+window.addEventListener('resize',scheduleNavigationUpdate);
+window.addEventListener('hashchange',scheduleNavigationUpdate);
+window.addEventListener('load',scheduleNavigationUpdate);
 
 setLanguage('en');
 document.getElementById('copyright-year').textContent=new Date().getFullYear();
