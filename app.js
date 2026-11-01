@@ -217,7 +217,17 @@ menuToggle.addEventListener('click',()=>{
   if(!willOpen)closePublicationMenus();
 });
 mobileNav.querySelectorAll('a').forEach(link=>link.addEventListener('click',closeMenu));
-document.addEventListener('keydown',event=>{if(event.key==='Escape'&&!mobileNav.hidden){closeMenu();menuToggle.focus();}});
+document.addEventListener('keydown',event=>{
+  if(event.key!=='Escape')return;
+  const openPublicationMenu=Array.from(publicationMenus).find(menu=>!menu.querySelector('.nav-dropdown-panel').hidden);
+  if(openPublicationMenu){
+    const restoreFocus=openPublicationMenu.contains(document.activeElement);
+    closePublicationMenus();
+    if(restoreFocus)openPublicationMenu.querySelector('.nav-dropdown-toggle').focus();
+    event.preventDefault();return;
+  }
+  if(!mobileNav.hidden){closeMenu();menuToggle.focus();}
+});
 window.matchMedia('(min-width: 701px)').addEventListener('change',event=>{closePublicationMenus();if(event.matches)closeMenu();});
 document.querySelectorAll('[data-filter]').forEach(button=>button.addEventListener('click',()=>{state.filter=button.dataset.filter;state.expanded=false;renderPublications();}));
 document.getElementById('publication-search').addEventListener('input',event=>{state.query=event.target.value;state.expanded=false;renderPublications();});
