@@ -62,3 +62,14 @@ html[lang=en] .hero-name{display:block}html[lang=en] .hero-name .name-divider{di
 .mobile-nav .nav-dropdown-panel{position:static;width:auto;max-width:none;margin:0 0 12px 10px;padding:2px 0 3px 12px;border:0;border-left:1px solid var(--line);border-radius:0;background:transparent;box-shadow:none}
 .mobile-nav .nav-dropdown-panel a{font-size:13px;padding:10px 12px}
 @media(min-width:701px) and (max-width:900px){.desktop-nav{gap:14px}.header-inner{gap:22px}}
+
+/* Research profiles stay together; award labels share the quiet sage palette. */
+.profile-links{display:flex;flex-wrap:wrap;align-items:center;gap:12px 22px;min-width:0}
+.profile-links .text-link{max-width:100%;white-space:nowrap}
+.hero-actions{flex-wrap:wrap;row-gap:16px}
+.publication-profile-links{justify-content:flex-end;align-self:flex-end}
+.contact-profile-links{gap:2px 16px;margin-bottom:2px}
+.site-footer{flex-wrap:wrap}
+.conference-award{display:inline-block;max-width:100%;margin-top:10px;padding:4px 9px;border:1px solid #bfccb2;border-radius:3px;background:#e1e8d8;color:#415c37;font-family:var(--sans);font-size:10px;font-weight:600;line-height:1.7;white-space:normal;overflow-wrap:break-word}
+@media(max-width:700px){.profile-links{column-gap:20px}.publication-profile-links{justify-content:flex-start;margin-top:18px}.publication-profile-links .text-link{font-size:10px}.contact-profile-links{column-gap:14px;row-gap:2px}.conference-award{padding:4px 8px}}
+@media print{.conference-award{background:transparent;color:inherit;border-color:#9aa58f;font-size:9px;margin-top:6px}}
