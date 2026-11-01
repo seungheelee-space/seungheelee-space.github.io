@@ -88,7 +88,7 @@ function setLanguage(lang){
   });
   menuToggle.setAttribute('aria-label',t(menuToggle.getAttribute('aria-expanded')==='true'?'closeMenu':'openMenu'));
   const officialProfile=document.querySelector('.about-copy > .text-link');
-  officialProfile.href=state.lang==='ko'?'https://housing.jbnu.ac.kr/jbnuProfl/housing/947/8233/artclView.do':'https://top.jbnu.ac.kr/jbnuProfl/housingeng/974/8418/artclView.do';
+  officialProfile.href='https://top.jbnu.ac.kr/housing/8466/subview.do?enc=Zm5jdDF8QEB8JTJGamJudVByb2ZsJTJGaG91c2luZyUyRjk0NyUyRjgyMzMlMkZhcnRjbFZpZXcuZG8lM0ZwYWdlJTNEMSUyNmZpbmRUeXBlJTNEJTI2ZmluZFdvcmQlM0QlMjY%3D';
   const departmentLink=document.querySelector('[data-i18n="departmentLink"]');
   departmentLink.href=state.lang==='ko'?'https://housing.jbnu.ac.kr/housing/index.do':'https://housing.jbnu.ac.kr/housingeng/index.do';
   renderPublications();
