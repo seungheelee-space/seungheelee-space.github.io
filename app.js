@@ -105,9 +105,8 @@ function formattedJournal(pub){
   const journal=state.lang==='en'&&pub.journal_en?pub.journal_en:pub.journal;
   const volume=pub.volume?`, ${pub.volume}${pub.issue?`(${pub.issue})`:''}`:'';
   const pages=pub.pages?`, ${pub.pages}`:'';
-  const online=pub.status==='Advance online publication'?` · ${t('onlinePublication')}`:'';
   const first=pub.online_year&&pub.online_year!==pub.year?` · ${t('firstOnline')} ${pub.online_year}`:'';
-  return `${journal}${volume}${pages}${online}${first}`;
+  return `${journal}${volume}${pages}${first}`;
 }
 
 function renderPublications(){
@@ -146,7 +145,6 @@ function citationText(pub){
   let citation=`${authors} (${pub.year}). ${pub.title}. ${pub.journal}`;
   if(pub.volume)citation+=`, ${pub.volume}${pub.issue?`(${pub.issue})`:''}`;
   if(pub.pages)citation+=`, ${pub.pages}`;
-  if(pub.status==='Advance online publication')citation+=' (Advance online publication)';
   return `${citation}. ${pub.url}`;
 }
 
